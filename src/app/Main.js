@@ -14,7 +14,7 @@ import VerticalLinearStepper from './stepper/stepper';
 const styles = {
   container: {
     textAlign: 'center',
-    paddingTop: 200,
+    paddingTop: 20,
   },
 };
 
@@ -60,23 +60,24 @@ class Main extends Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div style={styles.container}>
+
+        <h1>ReactJS Test</h1>
+
           <Dialog
             open={this.state.open}
-            title="Super Secret Password for access to something"
+            title="Dialog Title"
             actions={standardActions}
             onRequestClose={this.handleRequestClose}
           >
-            1-2-3-4-5
+            <p>This is the dialog content</p>
           </Dialog>
 
           <img src="/images/SmallLogo.png" width="300" />
 
           <VerticalLinearStepper></VerticalLinearStepper>
 
-          <h1>Test</h1>
-          <h2>Clear Dynamics</h2>
           <RaisedButton
-            label="Super Secret Password"
+            label="Show Dialog"
             secondary={true}
             onTouchTap={this.handleTouchTap}
           />
