@@ -16,7 +16,7 @@ import FlatButton from 'material-ui/FlatButton';
  *
  * <small>(The vertical stepper can also be used without `<StepContent>` to display a basic stepper.)</small>
  */
-class VerticalLinearStepper extends React.Component {
+class LoanWizardVerticalStepper extends React.Component {
 
 
   state = {
@@ -72,13 +72,10 @@ class VerticalLinearStepper extends React.Component {
       <div style={{maxWidth: 380, maxHeight: 400, margin: 'auto'}}>
         <Stepper activeStep={stepIndex} orientation="vertical">
           <Step>
-            <StepLabel>Select campaign settings</StepLabel>
+            <StepLabel>Loan</StepLabel>
             <StepContent>
-              <p>
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-              </p>
+              <h3>Loan Amount:</h3>
+              <input type="text" placeholder="$0" />
               {this.renderStepActions(0)}
             </StepContent>
           </Step>
@@ -120,4 +117,4 @@ class VerticalLinearStepper extends React.Component {
   }
 }
 
-export default VerticalLinearStepper;
+export default LoanWizardVerticalStepper;
