@@ -56,10 +56,15 @@ class Main extends Component {
 
   state = {
     loanTerm: 50,
+    loanAmount: 0
   }
 
-  handleSecondSlider(event, value) {
+  updateLoanTerm(event, value) {
     this.setState({loanTerm: value});
+  }
+
+  updateLoanAmount(event, value) {
+    this.setState({loanAmount: value});
   }
 
   handleRequestClose() {
@@ -90,16 +95,34 @@ class Main extends Component {
 
         <img src="/images/SmallLogo.png" width="200" />
 
-        <Slider
+        <Slider 
+          style={{
+              width: '300px',
+              margin: '0 auto'
+            }}
           min={3}
           max={10}
           step={1}
           defaultValue={5}
           value={this.state.loanTerm}
-          onChange={this.handleSecondSlider.bind(this)}
+          onChange={this.updateLoanTerm.bind(this)}
         />
+        <Slider 
+          style={{
+              width: '300px',
+              margin: '0 auto'
+            }}
+          min={3000}
+          max={55000}
+          step={100}
+          defaultValue={5000}
+          value={this.state.loanAmount}
+          onChange={this.updateLoanAmount.bind(this)}
+        />
+
         <p>
           <h3>{this.state.loanTerm} Years</h3>
+          <h3>${this.state.loanAmount}</h3>
         </p>
 
         <h1>Loan Repayment Calculator</h1>
@@ -130,33 +153,24 @@ class Main extends Component {
 
           <div>
             <DropDownMenu value={this.state.value} onChange={this.handleChange}>
-              <MenuItem value={1} primaryText="4.75% Fixed" />
-              <MenuItem value={2} primaryText="Every Night" />
-              <MenuItem value={3} primaryText="Weeknights" />
-              <MenuItem value={4} primaryText="Weekends" />
-              <MenuItem value={5} primaryText="Weekly" />
-            </DropDownMenu>
-            <br />
-            <DropDownMenu
-              value={this.state.value}
-              onChange={this.handleChange}
-              style={styles.customWidth}
-              autoWidth={false}
-            >
-              <MenuItem value={1} primaryText="Custom width" />
-              <MenuItem value={2} primaryText="Every Night" />
-              <MenuItem value={3} primaryText="Weeknights" />
-              <MenuItem value={4} primaryText="Weekends" />
-              <MenuItem value={5} primaryText="Weekly" />
+              <MenuItem value={1} primaryText="4.75% - Variable Rate" />
+              <MenuItem value={2} primaryText="3.99% - Fixed Rate 1 year" />
+              <MenuItem value={3} primaryText="3.75% - Fixed Rate 2 years" />
+              <MenuItem value={4} primaryText="3.89% - Fixed Rate 3 years" />
+              <MenuItem value={5} primaryText="3.99% - Fixed Rate 4 years" />
             </DropDownMenu>
           </div>
 
           <LoanWizardVerticalStepper></LoanWizardVerticalStepper>
 
-          <Paper style={paper_style} zDepth={4} circle={true} />
+          <Paper style={paper_style} zDepth={4} circle={true} >
+            <CircularProgress
+             style={{
+              padding: '15px'
+            }}
+             />
+          </Paper>
 
-          <br />
-          <CircularProgress />
           <br />
           <LinearProgress mode="indeterminate" />
           <br />
