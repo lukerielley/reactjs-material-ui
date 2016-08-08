@@ -71,6 +71,8 @@ class Main extends Component {
 
           <img src="/images/SmallLogo.png" width="300" />
 
+          <VerticalLinearStepper></VerticalLinearStepper>
+
           <h1>Test</h1>
           <h2>Clear Dynamics</h2>
           <RaisedButton

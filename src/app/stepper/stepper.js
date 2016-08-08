@@ -18,7 +18,7 @@ import FlatButton from 'material-ui/FlatButton';
  */
 class VerticalLinearStepper extends React.Component {
 
-/*
+
   state = {
     finished: false,
     stepIndex: 0,
@@ -118,7 +118,6 @@ class VerticalLinearStepper extends React.Component {
       </div>
     );
   }
-  */
 }
 
 export default VerticalLinearStepper;
