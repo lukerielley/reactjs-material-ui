@@ -115,17 +115,19 @@ class Main extends Component {
                 <p>This is the dialog content</p>
               </Dialog>
 
+              <hr />
+
               <Checkbox
                 id="checkboxId1"
                 name="checkboxName1"
                 value="checkboxValue1"
                 label="I accept the terms and conditions"
                 style={{
-                  width: '300px',
+                  width: '350px',
                   margin: '0 auto'
                 }}
                 iconStyle={{
-                  fill: '#FF0000'
+                  fill: '#ff8103'
                 }}/>
 
               <div>
