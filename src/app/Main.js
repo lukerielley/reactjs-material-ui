@@ -17,7 +17,7 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import LinearProgress from 'material-ui/LinearProgress';
 import Slider from 'material-ui/Slider';
-
+import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
 import HeaderComponent from './Components/header.component.js';
 import FooterComponent from './Components/footer.component.js';
@@ -95,7 +95,10 @@ class Main extends Component {
 
         <div style={styles.container}>
 
-        <HeaderComponent></HeaderComponent>
+        <AppBar
+          title="Loans and Borrowing"
+          iconClassNameRight="muidocs-icon-navigation-expand-more"
+        />
 
         <div className="pageContent">
 
