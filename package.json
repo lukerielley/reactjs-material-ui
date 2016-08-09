@@ -72,6 +72,9 @@
     "recursive-readdir-sync": "^1.0.6",
     "rimraf": "^2.5.3",
     "sinon": "^1.17.3",
-    "webpack": "^1.13.1"
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "transfer-webpack-plugin": "0.1.4",
+    "material-ui": "0.15.3" 
   }
 }
