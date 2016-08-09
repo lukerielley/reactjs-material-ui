@@ -12,14 +12,8 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import Slider from 'material-ui/Slider';
 
-/**
- * Vertical steppers are designed for narrow screen sizes. They are ideal for mobile.
- *
- * To use the vertical stepper with the contained content as seen in spec examples,
- * you must use the `<StepContent>` component inside the `<Step>`.
- *
- * <small>(The vertical stepper can also be used without `<StepContent>` to display a basic stepper.)</small>
- */
+import LoanTermComponent from '../components/loanterm.component.js';
+
 class LoanWizardVerticalStepper extends React.Component {
 
   state = {
@@ -138,7 +132,7 @@ class LoanWizardVerticalStepper extends React.Component {
                   <MenuItem value={3} primaryText="Secure Car" />
                 </DropDownMenu>
 
-                
+              <LoanTermComponent></LoanTermComponent>
 
               <h3>How often would you like to make your repayments?</h3>
               <DropDownMenu>
