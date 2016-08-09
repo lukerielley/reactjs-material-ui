@@ -35,9 +35,8 @@ const muiTheme = getMuiTheme({
 });
 
 const paper_style = {
-  height: 100,
-  width: 100,
-  margin: 20,
+  height: 130,
+  width: 130,
   display: 'inline-block',
 };
 
@@ -107,10 +106,6 @@ class Main extends Component {
               
               <LoanWizardVerticalStepper></LoanWizardVerticalStepper>
 
-              <h1>Loan Repayment Calculator</h1>
-              <p>Estimate how much you can borrow and how much the repayments will be at the current interest rate.</p>
-              
-              
               <Dialog
                 open={this.state.open}
                 title="Dialog Title"
@@ -119,7 +114,6 @@ class Main extends Component {
               >
                 <p>This is the dialog content</p>
               </Dialog>
-
 
               <Checkbox
                 id="checkboxId1"
@@ -138,24 +132,16 @@ class Main extends Component {
                 
               </div>
 
-              <Paper style={paper_style} zDepth={4} circle={true} >
-                <CircularProgress
-                style={{
-                  padding: '15px'
-                }}
-                />
+              <div className="paper">
+              <Paper style={paper_style} zDepth={4} circle={true}>
+                <div>
+                  <h3>Loan</h3>
+                  <h1>$12,345</h1>
+                  <h3>Over 3 years</h3>
+                </div>
               </Paper>
+              </div>
 
-              <br />
-              <LinearProgress mode="indeterminate" />
-              <br />
-
-              
-              <RaisedButton
-                label="Show Dialog"
-                secondary={true}
-                onTouchTap={this.handleTouchTap}
-              />
 
           </div>
 

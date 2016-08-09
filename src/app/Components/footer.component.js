@@ -3,10 +3,14 @@ import React, {Component} from 'react'
 class FooterComponent extends Component {
     render () {
         return (
-            <div>
-                <ul>
-                    <li>Footer item A</li>
-                </ul>
+            <div className="footer">
+                <span>
+                    Privacy Policy
+                    |
+                    Feedback & Complaints
+                    |
+                    Credit Guide
+                </span>
             </div>
         )
     }
