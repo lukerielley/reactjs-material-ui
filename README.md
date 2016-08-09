@@ -13,4 +13,10 @@ Run project:
 ```sh
 npm start
 ```
+
 Server is located at http://localhost:3000
+
+Building the project for a release:
+```sh
+npm run build
+```
