@@ -19,6 +19,10 @@ class LoanWizardVerticalStepper extends React.Component {
   state = {
     finished: false,
     stepIndex: 0,
+    applicants: 2,
+    taxType: 'after',
+    incomePeriod: 2,
+    loanType: 1
   };
 
 
@@ -29,6 +33,26 @@ class LoanWizardVerticalStepper extends React.Component {
       finished: stepIndex >= 2,
     });
   };
+
+  changeApplicants = (event, index, value) => {
+    this.setState({applicants: value});
+  }
+
+  changetaxType = (event, index, value) => {
+    this.setState({taxType: value});
+  }
+
+  changeIncomePeriod = (event, index, value) => {
+    this.setState({incomePeriod: value});
+  }
+
+  changeLoanType = (event, index, value) => {
+    this.setState({loanType: value});
+  }
+
+  changerRepaymentPeriod = (event, index, value) => {
+    this.setState({repaymentPeriod: value});
+  }
 
   handlePrev = () => {
     const {stepIndex} = this.state;
@@ -76,18 +100,24 @@ class LoanWizardVerticalStepper extends React.Component {
             <StepContent>
 
               <h3>Number of applicants</h3>
-              <DropDownMenu value={this.state.value} onChange={this.handleChange}>
+              <DropDownMenu 
+                value={this.state.applicants} 
+                onChange={this.changeApplicants}>
                   <MenuItem value={1} primaryText="1" />
                   <MenuItem value={2} primaryText="2" />
                 </DropDownMenu>
 
               <h3>Salary:</h3>
-              <DropDownMenu>
-                  <MenuItem value={1} primaryText="Before tax" />
-                  <MenuItem value={2} primaryText="After tax" />
+              <DropDownMenu
+                value={this.state.taxType} 
+                onChange={this.changetaxType}>
+                  <MenuItem value={'before'} primaryText="Before tax" />
+                  <MenuItem value={'after'} primaryText="After tax" />
                 </DropDownMenu>
                 <TextField hintText="$" style={{width: 150}} />
-                <DropDownMenu>
+                <DropDownMenu
+                value={this.state.incomePeriod} 
+                onChange={this.changeIncomePeriod}>
                   <MenuItem value={1} primaryText="Week" />
                   <MenuItem value={2} primaryText="Fortnight" />
                   <MenuItem value={3} primaryText="Month" />
@@ -126,7 +156,9 @@ class LoanWizardVerticalStepper extends React.Component {
             <StepContent>
 
               <h3>Type of loan</h3>
-              <DropDownMenu>
+              <DropDownMenu
+                value={this.state.loanType} 
+                onChange={this.changeLoanType}>
                   <MenuItem value={1} primaryText="Variable Rate" />
                   <MenuItem value={2} primaryText="Fixed Rate" />
                   <MenuItem value={3} primaryText="Secure Car" />
@@ -135,10 +167,12 @@ class LoanWizardVerticalStepper extends React.Component {
               <LoanTermComponent></LoanTermComponent>
 
               <h3>How often would you like to make your repayments?</h3>
-              <DropDownMenu>
+              <DropDownMenu
+                value={this.state.repaymentPeriod} 
+                onChange={this.changerRepaymentPeriod}>
                   <MenuItem value={1} primaryText="Weekly" />
                   <MenuItem value={2} primaryText="Fortnightly" />
-                  <MenuItem value={3} primaryText="Secure Car" />
+                  <MenuItem value={3} primaryText="Month" />
                 </DropDownMenu>
 
               {this.renderStepActions(2)}
