@@ -16,15 +16,20 @@ import LoanTermComponent from '../components/loanterm.component.js';
 
 class LoanWizardVerticalStepper extends React.Component {
 
+  // Initial states for then UI
   state = {
+
     finished: false,
-    stepIndex: 0,
-    applicants: 2,
+
+    // the initial step index for the vertical stepper
+    stepIndex: 0, 
+
+    // drop down list initial values
+    applicants: 1,
     taxType: 'after',
     incomePeriod: 2,
     loanType: 1
   };
-
 
   handleNext = () => {
     const {stepIndex} = this.state;
@@ -34,25 +39,23 @@ class LoanWizardVerticalStepper extends React.Component {
     });
   };
 
+  // HANDLE THE CHANGE EVENTS FOR THE SELECT LISTS
   changeApplicants = (event, index, value) => {
     this.setState({applicants: value});
   }
-
   changetaxType = (event, index, value) => {
     this.setState({taxType: value});
   }
-
   changeIncomePeriod = (event, index, value) => {
     this.setState({incomePeriod: value});
   }
-
   changeLoanType = (event, index, value) => {
     this.setState({loanType: value});
   }
-
   changerRepaymentPeriod = (event, index, value) => {
     this.setState({repaymentPeriod: value});
   }
+
 
   handlePrev = () => {
     const {stepIndex} = this.state;
